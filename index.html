@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: url(https://www.hdwallpapers.in/download/beautiful_white_clouds_blue_sky_nature_background_4k_hd_nature-2560x1440.jpg)
+        no-repeat center center fixed;
+    
+      background-size: cover;
+      color: #f3f7f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      background-color: #40424232;
+      backdrop-filter: blur(7px);
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 20px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2.2rem;
+      font-family: serif;
+      color: whitesmoke;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #fff;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1dc1da;
+      color: whitesmoke;
+      border: 2px solid whitesmoke;
+    }
+
+    .weather-info {
+      margin-top: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #error-messge {
+      color: red;
+      margin-top: 20px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      input[type="text"],
+      button {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+
+      .container {
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 350px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>WEATHER APP</h1>
+    <input type="text" id="city-input" placeholder="Enter city name" />
+    <button id="get-weather-btn">Get Weather</button>
+
+    <div class="weather-info hidden" id="weather-info">
+      <h2 id="city-name"></h2>
+      <p id="temperature"></p>
+      <p id="description"></p>
+    </div>
+
+    <p id="error-messge" class="hidden">City not found. Please try again.</p>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>
